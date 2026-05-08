@@ -27,6 +27,7 @@ import Sidebar from './components/admin/Sidebar';
 import Loans from './pages/admin/Loans/Loans';
 import Customers from './pages/admin/Customers/Customers';
 import Suppliers from './pages/admin/Suppliers/Suppliers';
+import CustomerLedger from './pages/admin/Customers/CustomerLedger';
 
 const MainLayout = () => (
   <div>
@@ -87,6 +88,7 @@ const App = () => {
       <Route path="/admin/performance" element={<AdminProtectedRoute allowedRoles={['SuperAdmin', 'OrderManager', 'PrintManager']}><PerformanceDashboard /></AdminProtectedRoute>} />
       <Route path="/admin/cancelled-orders" element={<AdminProtectedRoute allowedRoles={['SuperAdmin', 'OrderManager']}><CancelledOrders /></AdminProtectedRoute>} />
       <Route path="/admin/customers" element={<AdminProtectedRoute allowedRoles={['SuperAdmin', 'OrderManager']}><Customers /></AdminProtectedRoute>} />
+      <Route path="/admin/customers/ledger/:phone" element={<AdminProtectedRoute allowedRoles={['SuperAdmin', 'OrderManager']}><CustomerLedger /></AdminProtectedRoute>} />
       <Route path="/admin/suppliers" element={<AdminProtectedRoute allowedRoles={['SuperAdmin']}><Suppliers /></AdminProtectedRoute>} />
       <Route path="/admin/settings" element={<AdminProtectedRoute allowedRoles={['SuperAdmin']}><Settings /></AdminProtectedRoute>} />
     </Routes>
